@@ -12,6 +12,7 @@
 		"command.GuiScreenMixin",
 		"command.TabCompleterMixin",
 		"event.MinecraftMixin",
+		"forge.ForgeHooksClientMixin",
 		"input.GuiScreenMixin",
 		"input.MinecraftMixin",
 		"network.MixinNetHandlerPlayClient",

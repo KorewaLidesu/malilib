@@ -46,7 +46,8 @@ public abstract class EntityRendererMixin
     @Inject(method = "updateCameraAndRender(FJ)V", at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/gui/GuiScreen;drawScreen(IIF)V",
-            shift = Shift.AFTER))
+            shift = Shift.AFTER),
+            require = 0, expect = 0)
     private void onRenderScreenPost(float tickDelta, long nanoTime, CallbackInfo ci)
     {
         if (this.mc.world != null && this.mc.player != null)
