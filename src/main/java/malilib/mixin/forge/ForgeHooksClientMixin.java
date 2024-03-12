@@ -1,6 +1,5 @@
 package malilib.mixin.forge;
 
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +22,7 @@ public abstract class ForgeHooksClientMixin
         value = "INVOKE",
         target = "Lnet/minecraft/client/gui/GuiScreen;drawScreen(IIF)V",
         shift = Shift.AFTER))
-    private void onRenderScreenPost(GuiScreen screen, int mouseX, int mouseY, float partialTicks)
+    private static void onRenderScreenPost(GuiScreen screen, int mouseX, int mouseY, float partialTicks, CallbackInfo callbackInfo)
     {
         if (((GuiScreenMixin) screen).getMC().world != null && ((GuiScreenMixin) screen).getMC().player != null)
         {
